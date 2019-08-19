@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <form method='post'>
+        <div>
+            <label>
+                Title:<br />
+                <input type="text" name="title" />
+                {% if titleError %}
+                    <p>Title cannot be empty</p>
+                {% endif %}
+            </label>
+        </div>
+        <label>
+            Content:<br />
+            <textarea name="body"></textarea>
+            {% if bodyError %}
+                <p>Body cannot be empty</p>
+            {% endif %}
+        </label>
+        <input type="submit" value='Post' />
+    </form>
+
+{% endblock %}
